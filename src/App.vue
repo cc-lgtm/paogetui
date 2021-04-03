@@ -13,5 +13,6 @@
 body, html {
   width: 100%;
   height: 100%;
+  background-color: rgb(246, 252, 250);
 }
 </style>

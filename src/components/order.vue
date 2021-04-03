@@ -24,12 +24,16 @@
     />
     <line-itme
     derc="跑腿费"
+    :showR="false"
+    :showP="true"
     />
     <line-itme
     derc="小费"
+    :showP="true"
     />
     <line-itme
     derc="备注："
+    text="无"
     />
     <div class="footer">
       <div class="price">
@@ -47,6 +51,11 @@ import adress from '../components/adress.vue'
 import lineItme from '../components/lineitme.vue'
 export default {
   name: 'order',
+  data () {
+    return {
+      showPop: true
+    }
+  },
   methods: {
   },
   components: {

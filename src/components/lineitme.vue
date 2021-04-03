@@ -2,10 +2,16 @@
   <div class="lineItme">
     <div class="item"
     :derc='derc'
-    :goto='goto'
+    :showR='showR'
+    :showP='showP'
+    :text='text'
     >
       <span class="left">{{derc}}</span>
-      <span class="right">></span>
+      <span class="right">
+        <span class="text">{{text}}</span>
+        <span class="price" v-if="showP==true">￥{{price}}</span>
+        <span v-if="showR==true">></span>
+      </span>
     </div>
   </div>
 </template>
@@ -13,8 +19,25 @@
 <script>
 export default {
   name: 'lineItme',
+  data () {
+    return {
+      price: 0
+    }
+  },
   props: {
     derc: {
+      type: String,
+      default: ''
+    },
+    showR: {
+      type: Boolean,
+      default: true
+    },
+    showP: {
+      type: Boolean,
+      default: false
+    },
+    text: {
       type: String,
       default: ''
     }
@@ -38,12 +61,19 @@ export default {
   .left {
     font-size: 5.556vw;
     width: 50%;
+    margin-left: 2.778vw;
   }
   .right {
     width: 50%;
     text-align: right;
     margin-right: 2.778vw;
     font-size: 5.556vw;
+    span {
+      margin: 0 2.778vw;
+    }
+    .text, .price {
+      color: red;
+    }
   }
 }
 </style>
